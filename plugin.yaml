@@ -1,0 +1,33 @@
+# plugin.yaml — Hermes native plugin manifest
+name: hermes-rce
+version: 1.0.0
+description: >-
+  PTY terminal tools over the SSE+REST PoC transport: open sessions, exec with
+  prompt sync, blocking wait_for, cursor-paged bounded reads, policy gate.
+  Zero Python dependencies.
+tags: [terminal, shell, pty]
+license: MIT
+provides_tools:
+  - terminal_open
+  - terminal_write
+  - terminal_read
+  - terminal_wait_for
+  - terminal_exec
+  - terminal_resize
+  - terminal_close
+dangerous_tools:            # informational; route these through your approval gate
+  - terminal_write
+  - terminal_exec
+config_schema:
+  base_url:
+    type: str
+    default: "http://127.0.0.1:8899"
+    description: "PoC terminal transport base URL (REST + SSE)"
+  default_timeout_ms:
+    type: int
+    default: 30000
+    description: "Default tool timeout in ms (hard cap 300000)"
+  max_bytes:
+    type: int
+    default: 8192
+    description: "Default max bytes returned per read/exec (hard cap 65536)"
