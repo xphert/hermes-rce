@@ -1,0 +1,1 @@
+﻿{"name": "hermes-rce", "label": "hermes-rce", "description": "PTY terminal sessions: list, open, exec, page output by cursor, close.", "icon": "Terminal", "version": "1.0.0", "tab": {"path": "/hermes-rce", "position": "after:skills"}, "entry": "dist/index.js", "api": "plugin_api.py"}
