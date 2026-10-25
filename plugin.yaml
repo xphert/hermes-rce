@@ -1,6 +1,6 @@
 # plugin.yaml — Hermes native plugin manifest
 name: hermes-rce
-version: 1.0.0
+version: 1.0.1
 description: >-
   PTY terminal tools over the SSE+REST PoC transport: open sessions, exec with
   prompt sync, blocking wait_for, cursor-paged bounded reads, policy gate.
